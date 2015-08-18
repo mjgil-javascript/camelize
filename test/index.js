@@ -23,6 +23,18 @@ describe('should make things camelCase', function() {
   it('Mal    coM = malCom (handles tabs)', function() {
     expect(camelize('MaL    coM')).toEqual('malCom');
   })
+
+  it('123    coM = 123Com (handles numbers)', function() {
+    expect(camelize('123    coM')).toEqual('123Com');
+  })
+
+  it('Ma3235M = ma3235m (handles numbers)', function() {
+    expect(camelize('Ma3235M')).toEqual('ma3235m');
+  })
+
+  it('32342 = 32342 (handles numbers)', function() {
+    expect(camelize('32342')).toEqual('32342');
+  })
 });
 
 describe('should handle non-strings', function() {
