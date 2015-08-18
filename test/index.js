@@ -28,11 +28,11 @@ describe('should make things camelCase', function() {
     expect(camelize('123    coM')).toEqual('123Com');
   })
 
-  it('Ma3235M = ma3235m (handles numbers)', function() {
+  it('Ma3235M = ma3235m (handles strings with numbers)', function() {
     expect(camelize('Ma3235M')).toEqual('ma3235m');
   })
 
-  it('32342 = 32342 (handles numbers)', function() {
+  it('32342 = 32342 (handles number-strings)', function() {
     expect(camelize('32342')).toEqual('32342');
   })
 });
@@ -46,9 +46,15 @@ describe('should handle non-strings', function() {
     expect(camelize({})).toEqual('');
   })
 
-  // it('MaLcoM = malcom', function() {
-  //   expect(camelize('MaLcoM')).toEqual('malcom');
-  // })
+  it('1234 = 1234 (handles numbers)', function() {
+    expect(camelize(1234)).toEqual('1234');
+  })
+
+
+
+  it('NaN = NaN (handles numbers)', function() {
+    expect(camelize(NaN)).toEqual('NaN');
+  })
 });
 
 // describe('should handle unicode things for user', function() {
