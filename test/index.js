@@ -35,6 +35,12 @@ describe('should make things camelCase', function() {
   it('32342 = 32342 (handles number-strings)', function() {
     expect(camelize('32342')).toEqual('32342');
   })
+
+  // Company Type (Investor / Non-Investor)
+
+  it('Company Type (Investor / Non-Investor)', function() {
+    expect(camelize('Company Type (Investor / Non-Investor)')).toEqual('companyType(investor/non-investor)');
+  })
 });
 
 describe('should handle non-strings', function() {
