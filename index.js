@@ -6,7 +6,7 @@ function camelize(str) {
   var lastSpace = -1;
   var lastChar = '';
   var len = str.length;
-  console.log('len', len);
+  // console.log('len', len);
   var charArray = [];
   for (var index = 0; index < len; index++) {
     var letter = str.charAt(index);
